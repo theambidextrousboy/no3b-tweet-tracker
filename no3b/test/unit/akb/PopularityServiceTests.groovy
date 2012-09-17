@@ -57,42 +57,45 @@ class PopularityServiceTests extends GrailsUnitTestCase {
     }
 
     void testGetTweetsLocationPopularity() {
+
         Map<String, MutableInt> result = popularityService.getTweetUserPopularity(tweets)
-        assertTrue("Should have returned 3 results for user2 but returned, " + result.get("user1"),
-                result.get("user1") == 3)
+        assertTrue "Should have returned 3 results for user2 but returned, " + result.get("user1"),
+                result.get("user1") == 3
 
-        assertTrue("Should have returned 2 results for user2 but returned, " + result.get("user2"),
-                result.get("user2") == 2)
+        assertTrue "Should have returned 2 results for user2 but returned, " + result.get("user2"),
+                result.get("user2") == 2
 
-        assertTrue("Should have returned 1 results for user3 but returned, " + result.get("user3"),
-                result.get("user3") == 1)
+        assertTrue "Should have returned 1 results for user3 but returned, " + result.get("user3"),
+                result.get("user3") == 1
     }
 
     void testGetMostPopularLocation() {
 
-        MemberInfo baseMemberInfo = popularityService.getMostPopularLocation(popularityMap)
-        assertEquals("Username should be user4 but was " + baseMemberInfo.getUsername(),
+        MemberInfo baseMemberInfo = popularityService.getMostPopularMemberInfo(popularityMap)
+        assertEquals "Username should be user4 but was " + baseMemberInfo.getUsername(),
                 "user4",
-                baseMemberInfo.getUsername() )
+                baseMemberInfo.getUsername()
 
-        assertNull("Message should be null but was " + baseMemberInfo.getMessage(),
-                baseMemberInfo.getMessage() )
+        assertNull "Message should be null but was " + baseMemberInfo.getMessage(),
+                baseMemberInfo.getMessage()
 
-        assertEquals("Popularity should be 9 but was " + baseMemberInfo.getPopularity(),
+        assertEquals "Popularity should be 9 but was " + baseMemberInfo.getPopularity(),
                 9,
-                baseMemberInfo.getPopularity() )
+                baseMemberInfo.getPopularity()
     }
 
     void testGetMostPopularLocationEmptyMap() {
+
         Map<String, MutableInt> emptyMap = new HashMap<String, MutableInt>()
 
-        MemberInfo baseMemberInfo = popularityService.getMostPopularLocation(emptyMap)
-        assertNull("Username should be null but was " + baseMemberInfo.getUsername(),
-                baseMemberInfo.getUsername() )
+        MemberInfo baseMemberInfo = popularityService.getMostPopularMemberInfo(emptyMap)
 
-        assertNotNull("Message should not be null", baseMemberInfo.getMessage() )
+        assertNull "Username should be null but was " + baseMemberInfo.getUsername(),
+                baseMemberInfo.getUsername()
 
-        assertNull("Popularity should be null but was " + baseMemberInfo.getPopularity(),
-                baseMemberInfo.getPopularity() )
+        assertNotNull "Message should not be null", baseMemberInfo.getMessage()
+
+        assertNull "Popularity should be null but was " + baseMemberInfo.getPopularity(),
+                baseMemberInfo.getPopularity()
     }
 }

@@ -8,16 +8,16 @@
     margin-top:-350px;
     margin-left:-500px;
 
-    border:1px solid #000;
     padding: 20px;
 }
 
 h2 {
+    margin-top: 30px;
     text-align:center;
 }
 
 #minegishi {
-    height: 600px;
+    height: 550px;
     width: 290px;
     margin-top: 20px;
     float: left;
@@ -25,22 +25,14 @@ h2 {
     padding: 20px;
 }
 
-#kojiharu {
-    height: 600px;
-    width: 290px;
-    margin-top: 20px;
-    float: left;
-    border:1px solid #000;
-    padding: 20px;
-}
-
-#takamina {
-    height: 600px;
-    width: 290px;
-    margin-top: 20px;
-    float: left;
-    border:1px solid #000;
-    padding: 20px;
+#minegishi-name {
+    color: #000000;
+    font-weight: bold;
+    width: 300px;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: 15px;
 }
 
 #minegishi-pic {
@@ -48,8 +40,49 @@ h2 {
     background-repeat:no-repeat;
     background-position:center;
     height: 300px;
-    margin:0px;
     padding:15px;
+}
+
+#minegishi-message {
+    margin-top: 30px;
+}
+
+#minegishi-text {
+    color: red;
+    font-weight: bold;
+    width: 300px;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: 18px;
+}
+
+#minegishi-popularity-button {
+    margin-top: 20px;
+    width: 300px;
+    padding: 10px 15px;
+    background: #ffc0cb;
+    text-align: center;
+    color: #666666;
+}
+
+#kojiharu {
+    height: 550px;
+    width: 290px;
+    margin-top: 20px;
+    float: left;
+    border:1px solid #000;
+    padding: 20px;
+}
+
+#kojiharu-name {
+    color: #000000;
+    font-weight: bold;
+    width: 300px;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: 15px;
 }
 
 #kojiharu-pic {
@@ -57,8 +90,49 @@ h2 {
     background-repeat:no-repeat;
     background-position:center;
     height: 300px;
-    margin:0px;
     padding:15px;
+}
+
+#kojiharu-message {
+    margin-top: 30px;
+}
+
+#kojiharu-text {
+    color: red;
+    font-weight: bold;
+    width: 300px;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: 18px;
+}
+
+#kojiharu-popularity-button {
+    margin-top: 20px;
+    width: 300px;
+    padding: 10px 15px;
+    background: #ffc0cb;
+    text-align: center;
+    color: #666666;
+}
+
+#takamina {
+    height: 550px;
+    width: 290px;
+    margin-top: 20px;
+    float: left;
+    border:1px solid #000;
+    padding: 20px;
+}
+
+#takamina-name {
+    color: #000000;
+    font-weight: bold;
+    width: 300px;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: 15px;
 }
 
 #takamina-pic {
@@ -66,6 +140,28 @@ h2 {
     background-repeat:no-repeat;
     background-position:center;
     height: 300px;
-    margin:0px;
     padding:15px;
+}
+
+#takamina-message {
+    margin-top: 30px;
+}
+
+#takamina-text {
+    color: red;
+    font-weight: bold;
+    width: 300px;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: 18px;
+}
+
+#takamina-popularity-button {
+    margin-top: 20px;
+    width: 300px;
+    padding: 10px 15px;
+    background: #ffc0cb;
+    text-align: center;
+    color: #666666;
 }

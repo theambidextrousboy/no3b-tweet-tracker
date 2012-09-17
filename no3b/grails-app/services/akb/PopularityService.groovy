@@ -10,40 +10,40 @@ class PopularityService {
     private static final logger = LogFactory.getLog(this)
 
     public Map<String, MutableInt> getTweetUserPopularity(List<Tweet> tweets) {
-        Map<String, MutableInt> popularityLocationMap = new HashMap<String, MutableInt>()
+        Map<String, MutableInt> popularityUserMap = new HashMap<String, MutableInt>()
 
         tweets.each {
             String user = it.fromUserName
             if(user != null && user.length() > 0) {
-                if(popularityLocationMap.containsKey(user)) {
-                    popularityLocationMap.get(user).increment()
+                if(popularityUserMap.containsKey(user)) {
+                    popularityUserMap.get(user).increment()
                 } else {
-                    popularityLocationMap.put(user, new MutableInt(1))
+                    popularityUserMap.put(user, new MutableInt(1))
                 }
             }
         }
 
-        return  popularityLocationMap
+        return  popularityUserMap
     }
 
-    public MemberInfo getMostPopularLocation(Map<String, MutableInt> popularityLocationMap) {
+    public MemberInfo getMostPopularMemberInfo(Map<String, MutableInt> popularityUserMap) {
 
         MemberInfo memberInfo = new MemberInfo()
 
-        if(!popularityLocationMap.isEmpty()) {
+        if(!popularityUserMap.isEmpty()) {
 
-            popularityLocationMap = popularityLocationMap.findAll {
+            popularityUserMap = popularityUserMap.findAll {
                 it ->
                 it.value > 1
             }
 
-            popularityLocationMap = popularityLocationMap.sort {
+            popularityUserMap = popularityUserMap.sort {
                 a,
                 b ->
                 b.value <=> a.value
             }
 
-            Map.Entry<String, MutableInt> entry = popularityLocationMap.entrySet().iterator().next()
+            Map.Entry<String, MutableInt> entry = popularityUserMap.entrySet().iterator().next()
 
             memberInfo.setPopularity(entry.value.toInteger())
             memberInfo.setUsername(entry.key)

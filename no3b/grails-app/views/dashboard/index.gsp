@@ -11,14 +11,12 @@
 
     <body>
         <div id='member-area'>
-            <h2>NO3B Popularity Tracker</h2>
+            <h2>no3b Popularity Tracker</h2>
             <div id='minegishi'>
+                <label id='minegishi-name'>Minegishi Minami</label>
                 <div id='minegishi-pic'></div>
-                <label for='minegishi-pic'>Minegishi Minami</label>
 
-                <div id='minegishiButtons'>
-                    <input type='button' value='Where am I Popular?' id='minegishi-popularity-button'>
-                </div>
+                <input type='button' value='Who is loving me?' id='minegishi-popularity-button'>
 
                 <div id="minegishi-message">
                     <label id="minegishi-text"></label>
@@ -26,11 +24,11 @@
             </div>
 
             <div id='kojiharu'>
+                <label id='kojiharu-name'>Kojima Haruna</label>
                 <div id='kojiharu-pic'></div>
-                <label>Kojima Haruna</label>
 
-                <div id='kojiharuButtons'>
-                    <input type='button' value='Where am I Popular?' id='kojiharu-popularity-button'>
+                <div id='kojiharu-buttons'>
+                    <input type='button' value='Who is loving me?' id='kojiharu-popularity-button'>
                 </div>
 
                 <div id='kojiharu-message'>
@@ -39,11 +37,11 @@
             </div>
 
             <div id='takamina'>
+                <label id='takamina-name'>Takahashi Minami</label>
                 <div id='takamina-pic'></div>
-                <label>Takahashi Minami</label>
 
-                <div id='takaminaButtons'>
-                    <input type='button' value='Where am I Popular?' id='takamina-popularity-button'>
+                <div id='takamina-buttons'>
+                    <input type='button' value='Who is loving me?' id='takamina-popularity-button'>
                 </div>
 
                 <div id='takamina-message'>

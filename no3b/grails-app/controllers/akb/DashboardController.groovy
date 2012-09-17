@@ -12,14 +12,14 @@ class DashboardController {
     }
 
     def getPopularity = {
-        List<Tweet> tweets = twitterService.getSearchFor(params.member, 5)
+        List<Tweet> tweets = twitterService.getSearchFor(params.member, 3)
         Map<String, MutableInt> map = popularityService.getTweetUserPopularity(tweets)
-        MemberInfo memberInfo = popularityService.getMostPopularLocation(map)
+        MemberInfo memberInfo = popularityService.getMostPopularMemberInfo(map)
 
             if (memberInfo.message != null) {
                 render memberInfo.message
             } else {
-                render String.format("%s is Loving %s \nPosting %s times!",
+                render String.format("%s is loving %s! Posting %s times!",
                         memberInfo.username,
                         params.member,
                         memberInfo.popularity)
