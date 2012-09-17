@@ -47,6 +47,6 @@ recent 400 tweets that contain the name of the members you've clicked on.
 The results are processed to find out who posted the most times about that member.
 The result are then displayed below the button.
 
-(NOTE: it seems the twitter api is pretty slow so there can be a lag of 2secs bettween clicking
-the button and actually seeing something on the screen)
+(NOTE: it seems the twitter api is pretty slow so there can be a lag of 2secs 
+bettween clicking the button and actually seeing something on the screen)
 
