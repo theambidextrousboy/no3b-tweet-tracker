@@ -24,7 +24,7 @@ class DashboardControllerTests extends ControllerUnitTestCase {
         popularityMap.put("user1", new MutableInt(4))
         popularityMap.put("user2", new MutableInt(9))
 
-        BaseMemberInfo baseMemberInfo = new BaseMemberInfo()
+        MemberInfo baseMemberInfo = new MemberInfo()
         baseMemberInfo.setUsername("user2")
         baseMemberInfo.setPopularity(9)
 
@@ -45,7 +45,7 @@ class DashboardControllerTests extends ControllerUnitTestCase {
         def mockPopularityService = mockFor(PopularityService, true)
 
         mockTwitterService.demand.getSearchFor {def p, def q -> return tweets}
-        mockPopularityService.demand.getTweetsLocationPopularity {def r -> return popularityMap}
+        mockPopularityService.demand.getTweetUserPopularity {def r -> return popularityMap}
         mockPopularityService.demand.getMostPopularLocation {def s -> return baseMemberInfo}
 
         dashboardController.params.member = new String("minegishi")
@@ -53,7 +53,7 @@ class DashboardControllerTests extends ControllerUnitTestCase {
         dashboardController.popularityService = mockPopularityService.createMock()
         dashboardController.twitterService = mockTwitterService.createMock()
 
-        def model = dashboardController.getPopularity()
+        dashboardController.getPopularity()
 
         assertEquals String.format("%s is Loving %s \nPosting %s times!",
                 "user2",

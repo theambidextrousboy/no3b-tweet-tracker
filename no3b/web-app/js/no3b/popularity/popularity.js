@@ -1,8 +1,8 @@
-Akb.popularity = (function(){
+No3b.popularity = (function(){
 
-    var minegishi = "Minegishi Minami"
-    var kojiharu = "Kojima Haruna"
-    var takamina = "Takahashi Minami"
+    var minegishi = "Minegishi Minami";
+    var kojiharu = "Kojima Haruna";
+    var takamina = "Takahashi Minami";
 
     function popularity(member) {
         $.ajax({
@@ -41,9 +41,9 @@ Akb.popularity = (function(){
     }
 
     function init(){
-        $('#minegishi-popularity-button').click(minegishiClick)
-        $('#kojiharu-popularity-button').click(kojiharuClick)
-        $('#takamina-popularity-button').click(takaminaClick)
+        $('#minegishi-popularity-button').click(minegishiClick);
+        $('#kojiharu-popularity-button').click(kojiharuClick);
+        $('#takamina-popularity-button').click(takaminaClick);
     }
 
     return {
@@ -52,4 +52,4 @@ Akb.popularity = (function(){
 
 }());
 
-$(document).ready(Akb.popularity.init)
+$(document).ready(No3b.popularity.init);

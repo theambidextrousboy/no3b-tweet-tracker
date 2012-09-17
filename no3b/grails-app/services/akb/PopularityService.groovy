@@ -9,7 +9,7 @@ class PopularityService {
     static transactional = false
     private static final logger = LogFactory.getLog(this)
 
-    public Map<String, MutableInt> getTweetsLocationPopularity(List<Tweet> tweets) {
+    public Map<String, MutableInt> getTweetUserPopularity(List<Tweet> tweets) {
         Map<String, MutableInt> popularityLocationMap = new HashMap<String, MutableInt>()
 
         tweets.each {
@@ -26,11 +26,11 @@ class PopularityService {
         return  popularityLocationMap
     }
 
-    public BaseMemberInfo getMostPopularLocation(Map<String, MutableInt> popularityLocationMap) {
+    public MemberInfo getMostPopularLocation(Map<String, MutableInt> popularityLocationMap) {
 
-        BaseMemberInfo baseMemberInfo = new BaseMemberInfo()
+        MemberInfo memberInfo = new MemberInfo()
 
-        if(!popularityLocationMap.isEmpty()){
+        if(!popularityLocationMap.isEmpty()) {
 
             popularityLocationMap = popularityLocationMap.findAll {
                 it ->
@@ -45,14 +45,15 @@ class PopularityService {
 
             Map.Entry<String, MutableInt> entry = popularityLocationMap.entrySet().iterator().next()
 
-            baseMemberInfo.setPopularity(entry.value.toInteger())
-            baseMemberInfo.setUsername(entry.key)
+            memberInfo.setPopularity(entry.value.toInteger())
+            memberInfo.setUsername(entry.key)
 
         } else {
+
             logger.info("No valid results where returned from the twitter search")
-            baseMemberInfo.setMessage("No one is talking about you... sorry... :(")
+            memberInfo.setMessage("No one is talking about you... sorry... :(")
         }
 
-        return baseMemberInfo
+        return memberInfo
     }
 }

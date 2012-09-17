@@ -1,6 +1,6 @@
 package akb
 
-class BaseMemberInfo {
+class MemberInfo {
 
     private Integer popularity
     private String username

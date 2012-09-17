@@ -1,6 +1,6 @@
 package akb
 
-import twitter4j.GeoLocation
+import org.apache.commons.lang.mutable.MutableInt
 import twitter4j.Tweet
 
 class DashboardController {
@@ -12,18 +12,17 @@ class DashboardController {
     }
 
     def getPopularity = {
-        List<Tweet> tweets = twitterService.getSearchFor(params.member, 10)
-        Map<GeoLocation, String> map = popularityService.getTweetsLocationPopularity(tweets)
-        BaseMemberInfo baseMemberInfo = popularityService.getMostPopularLocation(map)
+        List<Tweet> tweets = twitterService.getSearchFor(params.member, 5)
+        Map<String, MutableInt> map = popularityService.getTweetUserPopularity(tweets)
+        MemberInfo memberInfo = popularityService.getMostPopularLocation(map)
 
-            if (baseMemberInfo.message != null){
-                render baseMemberInfo.message
+            if (memberInfo.message != null) {
+                render memberInfo.message
             } else {
-            render String.format("%s is Loving %s \nPosting %s times!",
-                    baseMemberInfo.username,
-                    params.member,
-                    baseMemberInfo.popularity)
+                render String.format("%s is Loving %s \nPosting %s times!",
+                        memberInfo.username,
+                        params.member,
+                        memberInfo.popularity)
         }
-
     }
 }

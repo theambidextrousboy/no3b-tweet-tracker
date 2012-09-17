@@ -17,15 +17,15 @@ class PopularityServiceTests extends GrailsUnitTestCase {
         //Set up tweets
         tweets = new ArrayList<Tweet>()
 
-        Tweet tweet1fromUser2 = Mockito.mock(Tweet.class);
+        Tweet tweet1fromUser2 = Mockito.mock(Tweet.class)
         Mockito.when(tweet1fromUser2.getFromUserName()).thenReturn("user2")
         tweets.add(tweet1fromUser2)
 
-        Tweet tweet2FromUser2 = Mockito.mock(Tweet.class);
+        Tweet tweet2FromUser2 = Mockito.mock(Tweet.class)
         Mockito.when(tweet2FromUser2.getFromUserName()).thenReturn("user2")
         tweets.add(tweet2FromUser2)
 
-        Tweet tweet1FromUser3 = Mockito.mock(Tweet.class);
+        Tweet tweet1FromUser3 = Mockito.mock(Tweet.class)
         Mockito.when(tweet1FromUser3.getFromUserName()).thenReturn("user3")
         tweets.add(tweet1FromUser3)
 
@@ -33,11 +33,11 @@ class PopularityServiceTests extends GrailsUnitTestCase {
         Mockito.when(tweet1fromUser1.getFromUserName()).thenReturn("user1")
         tweets.add(tweet1fromUser1)
 
-        Tweet tweet2FromUser1 = Mockito.mock(Tweet.class);
+        Tweet tweet2FromUser1 = Mockito.mock(Tweet.class)
         Mockito.when(tweet2FromUser1.getFromUserName()).thenReturn("user1")
         tweets.add(tweet2FromUser1)
 
-        Tweet tweet3FromUser1 = Mockito.mock(Tweet.class);
+        Tweet tweet3FromUser1 = Mockito.mock(Tweet.class)
         Mockito.when(tweet3FromUser1.getFromUserName()).thenReturn("user1")
         tweets.add(tweet3FromUser1)
 
@@ -57,7 +57,7 @@ class PopularityServiceTests extends GrailsUnitTestCase {
     }
 
     void testGetTweetsLocationPopularity() {
-        Map<String, MutableInt> result = popularityService.getTweetsLocationPopularity(tweets)
+        Map<String, MutableInt> result = popularityService.getTweetUserPopularity(tweets)
         assertTrue("Should have returned 3 results for user2 but returned, " + result.get("user1"),
                 result.get("user1") == 3)
 
@@ -70,7 +70,7 @@ class PopularityServiceTests extends GrailsUnitTestCase {
 
     void testGetMostPopularLocation() {
 
-        BaseMemberInfo baseMemberInfo = popularityService.getMostPopularLocation(popularityMap)
+        MemberInfo baseMemberInfo = popularityService.getMostPopularLocation(popularityMap)
         assertEquals("Username should be user4 but was " + baseMemberInfo.getUsername(),
                 "user4",
                 baseMemberInfo.getUsername() )
@@ -86,7 +86,7 @@ class PopularityServiceTests extends GrailsUnitTestCase {
     void testGetMostPopularLocationEmptyMap() {
         Map<String, MutableInt> emptyMap = new HashMap<String, MutableInt>()
 
-        BaseMemberInfo baseMemberInfo = popularityService.getMostPopularLocation(emptyMap)
+        MemberInfo baseMemberInfo = popularityService.getMostPopularLocation(emptyMap)
         assertNull("Username should be null but was " + baseMemberInfo.getUsername(),
                 baseMemberInfo.getUsername() )
 

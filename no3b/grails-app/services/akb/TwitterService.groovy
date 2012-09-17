@@ -13,6 +13,7 @@ class TwitterService {
         Query query = new Query(searchTerm)
         query.resultType(Query.RECENT)
         query.rpp(100)
+
         QueryResult queryResult = twitter.search(query)
         addedResults.addAll(queryResult.tweets)
 
