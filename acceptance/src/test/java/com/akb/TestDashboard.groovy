@@ -5,11 +5,11 @@ import com.thoughtworks.selenium.SeleneseTestCase
 public class TestDashboard extends SeleneseTestCase {
 
     public void setUp() {
-        setUp "http://localhost:8080/akb/", "*safari"
+        setUp "http://localhost:8080/no3b/", "*safari"
     }
 
     void testClickMinegishi() {
-        selenium.open("/akb")
+        selenium.open("/no3b")
         selenium.waitForPageToLoad("20000")
         assertTrue(selenium.isTextPresent("NO3B"))
         selenium.fireEvent("id=minegishi-popularity-button", "click")
@@ -18,7 +18,7 @@ public class TestDashboard extends SeleneseTestCase {
     }
 
     void testClickKojiharu() {
-        selenium.open("/akb")
+        selenium.open("/no3b")
         selenium.waitForPageToLoad("20000")
         assertTrue(selenium.isTextPresent("NO3B"))
         selenium.fireEvent("id=kojiharu-popularity-button", "click")
@@ -27,7 +27,7 @@ public class TestDashboard extends SeleneseTestCase {
     }
 
     void testClickTakamina() {
-        selenium.open("/akb")
+        selenium.open("/no3b")
         selenium.waitForPageToLoad("20000")
         assertTrue(selenium.isTextPresent("NO3B"))
         selenium.fireEvent("id=takamina-popularity-button", "click")
