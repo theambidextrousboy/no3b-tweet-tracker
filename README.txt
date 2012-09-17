@@ -22,7 +22,7 @@ To do that on the root project run:
 To start the webapp, go to the grails webapp folder (/no3b) and run:
    mvn grail:run-app
 
-This will build out the webapp for you, fire up an instance of TCServer and deploy it there for you.
+This will build out the webapp, and fire up a TCServer instance for you.
 The default URL should be http://localhost:8080/no3b
 
 To run the seleniun tests, go to acceptance test folder (/acceptance) and run:
