@@ -13,9 +13,9 @@ The project uses:
 
 There are unit tests and selenium tests for the project.
 
-The main/default maven profile will build the grails app and run all the unit tests. 
+The main/default maven profile will build the grails app and run all the unit tests.
 
-To do that on the root project run: 
+To do that on the root project run:
    mvn clean install
 (NOTE: this is quite memory intensive so it'd be wise to up the permgen)
 

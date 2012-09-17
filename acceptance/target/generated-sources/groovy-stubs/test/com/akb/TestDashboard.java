@@ -1,5 +1,5 @@
 //
-// Generated stub from file:/Users/polyrock/Documents/Work/test/integration/src/test/java/com/akb/TestDashboard.groovy
+// Generated stub from file:/Users/polyrock/no3b-tweet-tracker/acceptance/src/test/java/com/akb/TestDashboard.groovy
 //
 
 package com.akb;
